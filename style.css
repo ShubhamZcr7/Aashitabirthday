@@ -60,7 +60,7 @@ img:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 20rem;
+    margin: 0 2rem;
     line-height: 1.6rem;
 }
 
@@ -330,4 +330,5 @@ img:hover {
         font-size: 13px;
         margin: 0 0.5rem;
     }
+
 }
