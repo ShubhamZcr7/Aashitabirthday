@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&family=Lora:ital@0;1&family=Poppins:wght@300;400&display=swap");
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+}
+
+.bg-overlay {
+    background: url("img/bg.jpg") no-repeat center fixed;
+    background-size: cover;
+    filter: brightness(80%) opacity(0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5rem;
+    min-height: 500px;
+}
+
+img {
+    width: 300px;
+    border-radius: 10px;
+    margin-top: 50px;
+    transition: 0.8s ease;
+}
+
+img:hover {
+    margin-bottom: 20px;
+    box-shadow: 12px 12px #07072c;
+}
+
+.darkestPeach {
+    font-family: "Poppins", sans-serif;
+    color: black;
+}
+
+.darkPeacyh {
+    background-color: #f4978e;
+}
+
+.para {
+    color: #04361a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paratext {
+    color: #222;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20rem;
+    line-height: 1.6rem;
+}
+
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+    filter: opacity(0);
+    transform: translateX(-100%);
+}
+
+.show {
+    opacity: 1;
+    filter: opacity(100%);
+    transform: translateX(0);
+}
+
+@media (prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+
+/* ===============================
+   Gallery Styling for 13 Images
+   =============================== */
+.gallery {
+    --count: 13;
+    /* number of images */
+    --time: 78s;
+    /* total duration (13 * 6s = 78s) */
+    display: grid;
+    place-items: center;
+    width: 350px;
+    margin: 0 auto;
+    padding-bottom: 5rem;
+    position: relative;
+}
+
+.gallery>img {
+    grid-area: 1/1;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 5px solid #f2f2f2;
+    box-shadow: 0 0 6px #0007;
+    opacity: 0;
+    animation: fade var(--time) linear infinite;
+}
+
+.gallery>img:nth-child(1) {
+    animation-delay: calc(0 * var(--time) / var(--count));
+}
+
+.gallery>img:nth-child(2) {
+    animation-delay: calc(1 * var(--time) / var(--count));
+}
+
+.gallery>img:nth-child(3) {
+    animation-delay: calc(2 * var(--time) / var(--count));
+}
+
+.gallery>img:nth-child(4) {
+    animation-delay: calc(3 * var(--time) / var(--count));
+}
+
+.gallery>img:nth-child(5) {
+    animation-delay: calc(4 * var(--time) / var(--count));
+}
+
+.gallery>img:nth-child(6) {
+    animation-delay: calc(5 * var(--time) / var(--count));
+}
+
+.gallery>img:nth-child(7) {
+    animation-delay: calc(6 * var(--time) / var(--count));
+}
+
+.gallery>img:nth-child(8) {
+    animation-delay: calc(7 * var(--time) / var(--count));
+}
+
+.gallery>img:nth-child(9) {
+    animation-delay: calc(8 * var(--time) / var(--count));
+}
+
+.gallery>img:nth-child(10) {
+    animation-delay: calc(9 * var(--time) / var(--count));
+}
+
+.gallery>img:nth-child(11) {
+    animation-delay: calc(10 * var(--time) / var(--count));
+}
+
+.gallery>img:nth-child(12) {
+    animation-delay: calc(11 * var(--time) / var(--count));
+}
+
+.gallery>img:nth-child(13) {
+    animation-delay: calc(12 * var(--time) / var(--count));
+}
+
+/* Fade in/out smoothly */
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Keyframes */
+@keyframes slide {
+    10% {
+        transform: translateX(120%) rotate(var(--r));
+    }
+
+    0%,
+    100%,
+    20% {
+        transform: translateX(0%) rotate(var(--r));
+    }
+}
+
+@keyframes z-order {
+
+    10%,
+    20% {
+        z-index: 1;
+    }
+
+    80% {
+        z-index: 2;
+    }
+}
+
+@keyframes z-order-last {
+
+    10%,
+    20% {
+        z-index: 1;
+    }
+
+    90% {
+        z-index: 2;
+    }
+}
+
+/* ===============================
+   Headline Shine Effect
+   =============================== */
+#hedlinecontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+#shine {
+    margin-top: 5rem;
+    font-size: 60px;
+    font-weight: bold;
+    color: rgba(25, 107, 53, 0.3);
+    z-index: 10;
+    background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+    -webkit-background-size: 150px;
+    -webkit-background-clip: text;
+    -webkit-animation-name: shine;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    text-shadow: 0 0px 0px rgba(9, 156, 29, 0.419);
+}
+
+@-webkit-keyframes shine {
+
+    0%,
+    10% {
+        background-position: -1000px;
+    }
+
+    20% {
+        background-position: top left;
+    }
+
+    90% {
+        background-position: top right;
+    }
+
+    100% {
+        background-position: 1000px;
+    }
+}
+
+/* ===============================
+   Responsive Adjustments
+   =============================== */
+@media only screen and (max-width: 600px) {
+    #shine {
+        font-size: 22px;
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    #hedlinecontainer {
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+
+    .gallery {
+        width: 180px;
+        margin: 0 auto;
+        padding-bottom: 5rem;
+    }
+
+    section {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    section img {
+        width: 90%;
+        max-width: 280px;
+        margin: 1rem auto;
+    }
+
+    .paratext {
+        margin: 0 1rem;
+        font-size: 14px;
+        line-height: 1.5rem;
+        text-align: justify;
+    }
+}
+
+/* iPhone 15 portrait (~430px wide) */
+@media only screen and (max-width: 430px) {
+    #shine {
+        font-size: 18px;
+    }
+
+    .gallery {
+        width: 150px;
+        margin: 0 auto;
+    }
+
+    section img {
+        width: 95%;
+        max-width: 250px;
+    }
+
+    .paratext {
+        font-size: 13px;
+        margin: 0 0.5rem;
+    }
+}
